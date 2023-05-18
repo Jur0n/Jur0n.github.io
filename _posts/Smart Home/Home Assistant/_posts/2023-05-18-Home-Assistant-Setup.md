@@ -1,8 +1,8 @@
 ---
 layout: post
-title: My First Sample Post
+title: My second Sample Post
 tags: [HASS, proxmox, intel-nuc,Home,Assistant]
-category: [Smart home, Home Assistant]
+category: [Home Assistant]
 ---
 
 # Welcome
