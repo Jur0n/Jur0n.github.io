@@ -139,16 +139,16 @@ Example:
   ```
 
 
-### Links
+## Links
 ---
 
-#### Title Links
+### Title Links
 Just like in HTML, you can link a word: 
 This is my Favourite Search Engine: [swisscows](https://www.swisscows.com "sample title")
 
 `` [swisscows](https://www.swisscows.com "sample title") ``
 
-#### Quick Links and E-Mail
+### Quick Links and E-Mail
 
 Used to show a URL or E-Mail adress with destination:´
 
