@@ -130,15 +130,15 @@ Example:
 
 #### Title Links
 Just like in HTML, you can link a word: 
-This is my Favourite Search Engine: [swisscows](https:swisscows.com "sample title")
+This is my Favourite Search Engine: [swisscows](https://www.swisscows.com "sample title")
 
-`` [swisscows](https:swisscows.com "sample title") ``
+`` [swisscows](https://www.swisscows.com "sample title") ``
 
 #### Quick Links and E-Mail
 
 Used to show a URL or E-Mail adress with destination:´
 
-<https://swisscows.com>
+<https://www.swisscows.com>
 
 <j.neumann@neumann-itservice.de>
 
