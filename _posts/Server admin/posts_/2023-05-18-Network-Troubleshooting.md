@@ -31,14 +31,21 @@ ipconfig [/allcompartments] [/all]
 
 [ipconfig - Microsoft Learn Article](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)
 
+---
+
 ## ping
 
 ### Syntax
+---
+
 ```cmd
-ping [/t] [/a] [/n <count>] [/l <size>] [/f] [/I <TTL>] [/v <TOS>]
-[/r <count>] [/s <count>] [{/j <hostlist> | /k <hostlist>}] [/w <timeout>]
+ping [/t] [/a] [/n <count>] [/l <size>] [/f]
+[/I <TTL>] [/v <TOS>]
+[/r <count>] [/s <count>] 
+[{/j <hostlist> |/k <hostlist>}] [/w <timeout>]
 [/R] [/S <Srcaddr>] [/4] [/6] <targetname>
 ```
+
 |Parameter|Definition|
 |---|---|
 |/t|Specifies ping continue sending echo Request messages to the destination until interrupted. To interrupt and display statistics, press CTRL+ENTER. To interrupt and quit this command, press CTRL+C.|
