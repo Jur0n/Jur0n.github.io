@@ -5,16 +5,14 @@ tags: [Jekyll, Markdown,blog]
 category: [Cheat Sheets]
 ---
 
-# Markdown - Cheatsheet
-
-To write a Posts on Jekyll Mardown is used. This cheet will provide an list of usefull commands.
+To write a posts on Jekyll Markdown is used. This sheet will provide an list of usefull commands.
 
 ## Headings
 ---
 
 html equivalent: ``` <h1> - <h6>```
 
-To create a heading, add number signs (#) in front of a word or phrase. The number of number signs you use should correspond to the heading level. For example, to create a heading level three (h3), use three number signs (e.g., ### My Header).
+To create an heading, add number signs (#) in front of a word or phrase. The number of number signs you use should correspond to the heading level. For example, to create a heading level three (h3), use three number signs (e.g., ### My Header).
 
 
 ```markdown
@@ -90,6 +88,22 @@ can be extended over multiple paragraphs and can be nested:
 - second
 - third
 ```
+## Tables
+
+Table can be done by using the | charakter. You can align columns to the left, center, or right. Alignment is specific around the dashes below the header cell:
+- To align left, add a colon to the left, like :--- (this is the default)
+- For right alignment, add a colon to the right, like: ---:
+- For center alignment, add two colons, like: :---:
+
+```Markdown
+| Parameter|definition |
+|---:|---:|
+|/all | dies das |
+```
+
+| Parameter|definition |
+|---:|---:|
+|/all | dies das |
 
 ## Code
 ---
