@@ -26,12 +26,12 @@ ipconfig [/allcompartments] [/all]
 |/displaydns |  Displays the contents of the DNS client resolver cache|
 |/flushdns | Flushes and resets the contents of the DNS client resolver cache |
 |/registerdns | Initiates manual dynamic registration for the DNS names and IP addresses that<br>are configured at a computer. |
-|/release `[<adapter>]`| Sends a DHCPRELEASE message to the DHCP server to release the current DHCP configuration<br> and discard the IP address configuration for either all adapters (if an adapter is not specified) or for a specific<br> adapter if the adapter parameter is included. |
+|/release `[<adapter>]`| Sends a DHCPRELEASE message to the DHCP server to release the current DHCP configuration<br> and discard the IP address configuration for either all adapters (if an adapter is not specified)<br> or for a specific adapter if the adapter parameter is included. |
 |/renew `[<adapter>]`| Renews DHCP configuration for all adapters (if an adapter is not specified) or for a specific<br> adapter if the adapter parameter is included. |
 |/showclassid `<adapter>`|Configures the DHCP class ID for a specified adapter. To set the DHCP class ID for all<br> adapters, use the asterisk (*) wildcard character in place of adapter.|
 |/setclassid `<adapter>`<br>`[<classID>]`|Displays the DHCP class ID for a specified adapter. To see the DHCP class ID<br>for all adapters, use the asterisk (*) wildcard character in place of adapter.|
 
-[ipcnfig - Microsoft Learn Article](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)
+[ipconfig - Microsoft Learn Article](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)
 
 ## ping
 
