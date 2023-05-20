@@ -32,6 +32,27 @@ This post will give you a generel overview over dynamics and equalizing the typi
 ---
 ## Akkoustic Guitar
 ---
+Equalizer:
+- Low-Cut bei ca 120Hz
+- Midrange Oktaven verringern:
+- 315Hz
+- 630Hz
+- 1.2 kHz
+
+Allgemein beachten
+Dünn cutten - Breit boosten
+
+Kompressor:
+
+"soft knee" 
+Treshhold:	Not to low
+Attack:	Fast - pick klick
+Ratio:	
+Release time:	Medium
+Picking:        Faster Release
+Strumming: Slower Release
+
+Reverb ist  sinnvoll
 
 ---
 ## Bass
