@@ -67,94 +67,123 @@ free learning course: freecodecamp.org
 <div>Block element</div>
 
 ## Headings
-
+```html
 <h1>Page title</h1>
 <h2>Subheading</h2>
 <h3>Sub subheading</h3>
 <h4>Quaternary heading</h4>
+```
 
 ## Paragraph with style
 
+```html
 <p style="text-align: center;">text</p>
+```
 
 ## Image
 
+```html
 <img src="/demo.jpg" alt="description" height="48" width="100">
-
+```
 
 ## Mailto link
 
+```html
 <a href="mailto:me@ruwix.com?Subject=Hi%20mate" target="_top">Send Mail</a>
+```
 
 ## Inner anchor (jump to ID)
 
+```html
 <a href="#footer">Jump to footnote</a>
 <br />
 <a name="footer"></a>Footnote content
+```
 
 ## Bold text
 
+```html
 <strong>Bold text</strong>
+```
 
 ## Italic text
 
+```html
 <em>Italic text</em>
+```
 
 ## Underlined text
 
+```html
 <span style="text-decoration: underline;">Underlined text</span>
+```
 
 ## Iframe
 
+```html
 <iframe src="link.html" width="200" height="200">
 </iframe> 
+```
 
 ## Abbreviation
 
+```html
 <abbr title="Hypertext Markup Language">HTML</abbr>
+```
 
 ## Comment
 
+```html
 <!-- HTML
 Comment -->
+```
 
 ## Horizontal Line
 
+```html
 <hr />
+```
 
 ## Line break
 
+```html
 <br />
+```
 
 ## Quotation
 
+```html
 <q>Success is a journey not a destination.</q>
 
 <blockquote cite="https://ruwix.com/">
 The Rubik's Cube is the World’s best selling puzzle toy.
 </blockquote> 
+```
 
 ## Video
 
+```html
 <video width="200" height="150" controls>
   <source src="vid.mp4" type="video/mp4">
   <source src="vid.ogg" type="video/ogg">
-  No video support.
 </video>
+```
 
 ## Audio
 
+```html
 <audio controls>
   <source src="sound.ogg" type="audio/ogg">
   <source src="sound.mp3" type="audio/mpeg">
   No audio support.
 </audio> 
-
+```
 
 # Structures
 
 ## Table
 
+```html
 <table><caption>Phone numbers</caption>
  <thead>
    <tr>
@@ -182,26 +211,32 @@ The Rubik's Cube is the World’s best selling puzzle toy.
    </tr>
  </tfoot>
 </table>
+```
 
 ## Unordered list
 
+```html
 <ul>
   <li>First</li>
   <li>Second</li>
   <li>Third</li>
 </ul>
+```
 
 ## Definition list
 
+```html
 <dl>
   <dt>HTML</dt>
   <dd>Hypertext Markup Language</dd>
   <dt>CSS</dt>
   <dd>Cascading Style Sheets </dd>
 </dl>
+```
 
 ## Form
 
+```html
 <form action="/action.php" method="post">
   Name: <input name="name" type="text" /> <br /> 
   Age: <input max="99" min="1" name="age" step="1" type="number" value="18" /> <br />
@@ -214,42 +249,40 @@ The Rubik's Cube is the World’s best selling puzzle toy.
   <label><input name="terms" type="checkbox" value="tandc" />Accept terms</label> <br />
 <input type="submit" value="Submit" />
 </form>
-
+```
 
 # Attributes
 
 ## SYNTAX
 
-<tag attributename="value" />
+``<tag attributename="value" />``
 
 - lowecase attributes, quote values
 Global attributes
 accesskey, class, contenteditable, data-*, dir, draggable, hidden, id, lang, spellcheck, style, tabindex, title
 
-<div id="demo" class="big" dir="ltr" lang="en" 
-  style="color: red;" tabindex="0" title="Tooltip" 
-  contenteditable="true" spellcheck="true" 
-  data-htmlcheat="99">Hello World!
-</div>
-
 Internationalization: dir, lang, xml:lang
 
+```html
 <html lang="en-US">
-...
 <p dir="rtl">Right to left (Arabic)</p> 
-...
 </html>
+```
 
 Link: download, href, hreflang, media, rel, target, type
 
+```html
 <a href="https://htmlg.com/" target="_blank" rel="external" hreflang="en" type="text/html">
 Link
 </a>
+```
 
 Image: src, alt, height, ismap, longdesc, src, srcset, usemap, width
 
+```html
 <img src="/demo.jpg" alt="description" 
 height="48" width="100" longdesc="desc.txt" />
+```
 
 All attributes
 acceptform, input
