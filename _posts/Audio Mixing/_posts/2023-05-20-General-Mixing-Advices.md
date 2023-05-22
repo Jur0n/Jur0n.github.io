@@ -40,14 +40,23 @@ Gate:
 - set release time tight
 - hold ~ 50ms
 
-### Snare
+### Snare Top
 
 #### EQ
 Lcut to 120
 mid range 415
 boot high shelf ~18hz
 
-bot:
+ToDo:
+- cut arroung 700hz
+- Hshlv at top , 5 kHZ +
+
+#### Dynamics
+
+Compression:
+
+
+### Snare Bot
 
 ### Hihat
 
