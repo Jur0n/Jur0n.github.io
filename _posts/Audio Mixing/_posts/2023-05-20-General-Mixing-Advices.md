@@ -13,8 +13,13 @@ This post will give you a generel overview over dynamics and equalizing the typi
 ---
 
 ### Kick
+
+#### EQ
+
 lCut to 40 hz
 mid range285
+
+#### Dynamics
 
 ### Snare
 Lcut to 120
@@ -34,9 +39,22 @@ like kick
 ### Crash
 ---
 
+## Bass
+---
+bass
+---
+
+
+
 ## Piano
 ---
-### Pads & Keys
+### Keys
+
+
+### Pads
+
+
+### Tracks
 
 ---
 ## Akkoustic Guitar
@@ -63,9 +81,6 @@ Strumming: Slower Release
 
 Reverb ist  sinnvoll
 
----
-## Bass
----
 ---
 
 ## violine
