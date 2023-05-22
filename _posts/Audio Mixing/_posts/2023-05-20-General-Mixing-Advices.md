@@ -13,12 +13,21 @@ This post will give you a generel overview over dynamics and equalizing the typi
 ---
 
 ### Kick
+lCut to 40 hz
+mid range285
 
 ### Snare
+Lcut to 120
+mid range 415
+boot high shelf ~18hz
+
+bot:
 
 ### Hihat
 
 ### Toms
+
+like kick
 
 ### Rides
 
