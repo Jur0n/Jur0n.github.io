@@ -17,11 +17,12 @@ This post will give you a generel overview over dynamics and equalizing the typi
 #### EQ
 
 Freq overview:
-| Frequency | Character |
+
+|Frequency|Character|
 |---|---|
 |40 to 60 hz|Bottom: Tone of reverberation|
 |60 to 100 hz|Thump - air that is moving|
-|100 to 200 hz| Body of the Kick|
+|100 to 200 hz|Body of the Kick|
 |200 to 2000 hz|Hollowness, muddy or ringing sounds |
 |2k to 4k|Beater - The Klick sound can be found here|
 
@@ -31,6 +32,7 @@ To Do:
 - lcut at 40 possible
 
 Example:
+
 ![Kick-EQ](/img/audio/kick-eq.png "EQ for a Kick Drum")
 
 #### Dynamics
