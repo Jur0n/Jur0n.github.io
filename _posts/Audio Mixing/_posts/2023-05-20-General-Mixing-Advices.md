@@ -31,10 +31,14 @@ To Do:
 - lcut at 40 possible
 
 Example:
-![Kick-EQ](/Mixing/img/kick-eq.png "EQ for a Kick Drum")
+![Kick-EQ](/_posts/Audio%20Mixing/img/kick-eq.png "EQ for a Kick Drum")
 
 #### Dynamics
+
 Gate:
+- Attack needs to be as fast as possible, or it will take high end away
+- set release time tight
+- hold ~ 50ms
 
 ### Snare
 
