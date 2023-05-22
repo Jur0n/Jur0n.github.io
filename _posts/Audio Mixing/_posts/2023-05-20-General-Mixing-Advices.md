@@ -16,12 +16,29 @@ This post will give you a generel overview over dynamics and equalizing the typi
 
 #### EQ
 
-lCut to 40 hz
-mid range285
+Freq overview:
+| Frequency | Character |
+|---|---|
+|40 to 60 hz|Bottom: Tone of reverberation|
+|60 to 100 hz|Thump - air that is moving|
+|100 to 200 hz| Body of the Kick|
+|200 to 2000 hz|Hollowness, muddy or ringing sounds |
+|2k to 4k|Beater - The Klick sound can be found here|
+
+To Do:
+- wide cut arround 280 hz to isolate the kickness (low freqs)
+- Damp or boost the Klickness at around 3-4.5 kHz (personal taste)
+- lcut at 40 possible
+
+Example:
+![Kick-EQ](/Mixing/img/kick-eq.png "EQ for a Kick Drum")
 
 #### Dynamics
+Gate:
 
 ### Snare
+
+#### EQ
 Lcut to 120
 mid range 415
 boot high shelf ~18hz
