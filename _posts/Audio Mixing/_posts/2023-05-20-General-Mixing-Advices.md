@@ -31,7 +31,7 @@ To Do:
 - lcut at 40 possible
 
 Example:
-![Kick-EQ](_posts/Audio%20Mixing/img/kick-eq.png "EQ for a Kick Drum")
+![Kick-EQ](/_posts/Audio%20Mixing/img/kick-eq.png "EQ for a Kick Drum")
 
 #### Dynamics
 
@@ -60,6 +60,18 @@ You just want to get the punch
 - Fast attack, 20 ms
 - Hold 10 ms
 - Release around 150 ms
+
+#### FX
+
+Reverb is crucial for a good snare sound
+use Ambience Reverb:
+- predelay: 14ms
+- decay: ~2.00s
+- size: 60
+- Damping: 10kHz
+- Diffuse: 30
+
+Send to FX Channel -> about 3/7ths
 
 
 ### Snare Bot
