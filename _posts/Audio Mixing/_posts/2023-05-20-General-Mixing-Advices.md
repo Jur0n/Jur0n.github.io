@@ -31,7 +31,7 @@ To Do:
 - lcut at 40 possible
 
 Example:
-![Kick-EQ](/_posts/Audio%20Mixing/img/kick-eq.png "EQ for a Kick Drum")
+![Kick-EQ](_posts/Audio%20Mixing/img/kick-eq.png "EQ for a Kick Drum")
 
 #### Dynamics
 
@@ -54,6 +54,12 @@ ToDo:
 #### Dynamics
 
 Compression:
+You just want to get the punch
+
+- 4.0 Ratio
+- Fast attack, 20 ms
+- Hold 10 ms
+- Release around 150 ms
 
 
 ### Snare Bot
