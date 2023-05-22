@@ -31,7 +31,7 @@ To Do:
 - lcut at 40 possible
 
 Example:
-![Kick-EQ](/_posts/Audio Mixing/img/kick-eq.png "EQ for a Kick Drum")
+![Kick-EQ](/img/audio/kick-eq.png "EQ for a Kick Drum")
 
 #### Dynamics
 
