@@ -64,7 +64,7 @@ mid range 415
 boot high shelf ~18hz
 
 ToDo:
-- cut arroung 700hz
+- cut arround 700hz
 - Hshlv at top , 5 kHZ +
 
 Example:
@@ -215,12 +215,12 @@ Reverb ist  sinnvoll
 
 # Vocals
 ---
+
+#### Dynamics
+
 - ~ 3.0
 - fast Attack - ~ 16 ms
 - Hold 10ms
 - fast release - 5ms
-
-
-#### Dynamics
 
 ---
