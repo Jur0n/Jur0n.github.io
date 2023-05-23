@@ -12,6 +12,10 @@ This post will give you a generel overview over dynamics and equalizing the typi
 ## Drums
 ---
 
+General:
+
+feel free to fine tune the Drum Gates at the end of the mix
+
 ### Kick
 
 #### EQ
@@ -42,9 +46,19 @@ Gate:
 - set release time tight
 - hold ~ 50ms
 
+---
+
 ### Snare Top
 
 #### EQ
+
+|Frequency|Character|
+|---|---|
+|200 to 400 hz|Body: Fundament of most snares|
+|400 to 800 hz|Ring - hollow ringing|
+|2k to 4k|Attack - Head of the Crack|
+| 4k to ~ 8k|Sizzle and snap|
+
 Lcut to 120
 mid range 415
 boot high shelf ~18hz
@@ -53,10 +67,14 @@ ToDo:
 - cut arroung 700hz
 - Hshlv at top , 5 kHZ +
 
+Example:
+
+![snare-top-EQ](/img/audio/snare-top-eq.png "EQ for a Snare Top Mic")
+
 #### Dynamics
 
 Compression:
-You just want to get the punch
+The Magic happens between the crack and the punch
 
 - 4.0 Ratio
 - Fast attack, 20 ms
@@ -75,19 +93,66 @@ use Ambience Reverb:
 
 Send to FX Channel -> about 3/7ths
 
+---
 
 ### Snare Bot
 
-### Hihat
+Sound of the Fell.
+
+#### EQ
+
+ToDo:
+- Cut low end
+- Rest is same as top snare
+
+Example:
+
+![snare-bot-EQ](/img/audio/snare-bot-eq.png "EQ for a Snare bot Mic")
+
+#### Dynamics
+
+- strong ratio, 10
+- fast attack
+- hold as desired
+- fast release, ~70ms
+
+---
 
 ### Toms
 
-like kick
+#### EQ
 
-### Rides
+|Frequency|Character|
+|---|---|
+|100 to 300 hz|Body: Depends on the drum itself, the "boom" sound is found here.|
+|500 to 900 hz|Honk - buildup of unmusical tones, listen carefully|
+|3k to 4k|Attack - Stick hitting the drum|
 
-### Crash
+ToDo:
+- wide cut around 300 hz
+- boost hShlv at ~6k 
+
+#### Gate
+we want a snappy sound
+
+- again, fast attack
+- hold: ~150ms
+- long release, ~650ms
+
 ---
+
+### Cymbals, OHs. Hi-Hat
+
+> "Hi-hat einfach muten" - Manuel Gottlieb
+
+#### EQ
+
+|Frequency|Character|
+|---|---|
+|200 to 300 hz|Clank: "chink" sound|
+|6k and up|Sizzle - the "tsss" parts of cymbals, carefull tuning|
+
+
 
 ## Bass
 ---
