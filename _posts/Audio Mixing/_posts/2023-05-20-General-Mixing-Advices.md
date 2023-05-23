@@ -156,7 +156,18 @@ we want a snappy sound
 
 ## Bass
 ---
-bass
+
+#### EQ
+
+-High Pass
+
+#### Dynamics
+
+Compression is key for a good bass sound.
+
+
+
+
 ---
 
 
@@ -171,20 +182,20 @@ bass
 
 ### Tracks
 
+Should be fine, maybe a little trim and a HiPass Filter
+
 ---
 ## Akkoustic Guitar
 ---
-Equalizer:
+
+#### EQ:
 - Low-Cut bei ca 120Hz
 - Midrange Oktaven verringern:
 - 315Hz
 - 630Hz
 - 1.2 kHz
 
-Allgemein beachten
-Dünn cutten - Breit boosten
-
-Kompressor:
+#### Dynamics 
 
 "soft knee" 
 Treshhold:	Not to low
@@ -204,4 +215,12 @@ Reverb ist  sinnvoll
 
 # Vocals
 ---
+- ~ 3.0
+- fast Attack - ~ 16 ms
+- Hold 10ms
+- fast release - 5ms
+
+
+#### Dynamics
+
 ---
