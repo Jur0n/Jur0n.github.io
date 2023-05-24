@@ -5,7 +5,7 @@ tags: [Password, GPO, Active Directory, SERV09F]
 category: [Active Directory]
 ---
 
-# Der Einsatz von „Fine-grained Passoword Policies“
+# Der Einsatz von „Fine-grained Password Policies“
 
 Durch Einsatz der „Remote Server Administration Tools“ – Active Directory Verwaltungscenter ist es möglich, eine „**Fine-grained Password Policy**“ (FGPP – deutsch: differenzierte Kennwortrichtlinie) für Gruppen in einer Domäne zu definieren. Dies hat den Vorteil, dass für verschiedene Gruppen von Benutzer differenzierte Passwortrichtlinien festgelegt werden können, wie zum Beispiel strengere Einstellungen für Konten mit höheren Rechten, wie die von Administratoren oder Super Usern. Des Weiteren können Regeln für das Sperren von Benutzeraccounts bei wiederholter falscher Passwort Eingabe definiert werden. 
 
