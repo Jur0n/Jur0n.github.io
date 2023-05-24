@@ -113,6 +113,12 @@ To make the user able to make changes in the startmenu, the .xml file can be edi
 ```
 This makes the user able to ***add*** custom tiles.
 
+Changes will only apply if you set the last-edited value to a new value:
+
+```Powershell
+(ls <path>).LastWriteTime = Get-Date
+```
+
 ## Group Policies
 
 Windows Server saves information about **Group Policies** at serveral locations.

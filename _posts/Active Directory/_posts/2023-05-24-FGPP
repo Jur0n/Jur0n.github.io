@@ -1,0 +1,28 @@
+---
+layout: post
+title: FFGPs
+tags: [Password, GPO, Active Directory, SERV09F]
+category: [Active Directory]
+---
+
+# Der Einsatz von „Fine-grained Passoword Policies“
+
+Durch Einsatz der „Remote Server Administration Tools“ – Active Directory Verwaltungscenter ist es möglich, eine „**Fine-grained Password Policy**“ (FGPP – deutsch: differenzierte Kennwortrichtlinie) für Gruppen in einer Domäne zu definieren. Dies hat den Vorteil, dass für verschiedene Gruppen von Benutzer differenzierte Passwortrichtlinien festgelegt werden können, wie zum Beispiel strengere Einstellungen für Konten mit höheren Rechten, wie die von Administratoren oder Super Usern. Des Weiteren können Regeln für das Sperren von Benutzeraccounts bei wiederholter falscher Passwort Eingabe definiert werden. 
+
+Wichtig ist, das differenzierte Kennwortrichtlinien nur auf AD-Gruppen angewendet werden können und nicht etwa auf eine Organisationseinheit. Dies wäre laut Microsoft aber mit der Verwendung von
+Schattengruppen möglich. Schattengruppen sind Gruppen, die die Zugehörigkeit eines Users zu einer OU abbilden, aber sonst keine besonderen Rechte vergeben.
+
+Umgesetzt werden kann diese Methode auf dem Domänen Controller selbst oder von einem Windows-Rechner der über die „RSAT-Tools“ und das Active Directory Verwaltungscenter verfügt. Des Weiteren muss der Administrator über die benötigten Rechte verfügen. Um die Kennwortrichtlinien zu
+speichern, wurden zwei neue Objekt-Klassen in den Active Directory Domain Services eingeführt: die **Passwort Settings Container (PSC)** und die **Password Settings Objects (PSO)**.
+
+Eine differenziert Kennwortrichtlinie wird in Form eines **PSC**s gespeichert, welches die verschiedenen **PSO**s enthält.
+
+Um eine differenzierte Kennwortrichtlinie zu erstellen, muss das Active Directory Verwaltungscenter geöffnet werden. Hier wird im linken Fenster die betreffende Domäne ausgewählt und dann zu: **“System -> Password Settings Container”** navigiert. Hier muss der Befehl **„neu -> Kennworteinstellungen“** ausgewählt werden, und es öffnet sich das Fenster zum Definieren der
+Kennwortrichtlinie. Hier können die Kennworteinstellungen vorgenommen werden sowie die AD- Benutzer oder -Gruppen zugeordnet werden.
+
+
+Quellen:
+
+[Microsoft Learn - Introduction to Active Directory Administrative Center Enhancements (Level 100)](https://learn.microsoft.com/de-de/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#fine_grained_pswd_policy_mgmt)
+
+[Microsoft Learn: AD DS: Fine-Grained Password Policies](https://learn.microsoft.com/de-de/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770394(v=ws.10))
