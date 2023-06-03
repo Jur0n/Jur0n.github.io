@@ -63,7 +63,7 @@ Any configuration done in **Computerconfiguration** has priority to the same con
 GPOs **inherit** to subsidary OUs and containers. It is activated by default, but can be *deactivated* for an OU.
 Another possibillity is to **enforce** Policies, which can be set in an GPO. By doing so it can be guaranteed that all subsidary OUs get the Policy, even if they are managed by another administrator.
 
-### Different Status of GPOS:
+### Different Status of GPOS
 
 |Status|explanation|
 |---|---|
@@ -90,7 +90,9 @@ Benutzername [/ p [<Password>]]]]
 |`/u   Domain \ User`|Runs the command with the account permissions of the user that is specified by<br>User or Domain\User. The default is the permissions of the current logged-on<br>user on the computer that issues the command.|
 |`/p   Password`|Specifies the password of the user account that is specified in the /u parameter.`|
 |`/user   TargetUserName`|Specifies the user name of the user whose RSOP data is to be displayed.`|
-|`/scope { user | computer }`|Displays either user or computer results. Valid values for the /scope parameter are user or computer. If you omit the /scope parameter, gpresult displays both user and computer settings.|
+|`/scope { user | computer }`|Displays either user or computer results. Valid values for the /scope parameter are<br> user or computer. If you omit the /scope parameter, gpresult displays both user and computer settings.|
 |`/v`|Specifies that the output display verbose policy information.|
 |`/z`|Specifies that the output display all available information about Group Policy.<br> Because this parameter produces more information than the /v parameter,<br> redirect output to a text file when you use this parameter<br> (for example, gpresult /z >policy.txt).|
 |`/?`|Displays help at the command prompt.|
+
+## Deploying software with group policies
