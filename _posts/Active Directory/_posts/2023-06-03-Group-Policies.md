@@ -96,3 +96,26 @@ Benutzername [/ p [<Password>]]]]
 |`/?`|Displays help at the command prompt.|
 
 ## Deploying software with group policies
+
+The automated deployment of Softwarte can be realized through the Group Policy Software Deployment.
+
+#### Quick Overview
+
+- The GP is tied to a GPO an is avaiable for the Users in the correpondig OU.
+- The GP defines which Software is going to installed  and defines a path to the program data. These need to be exsistend in an .msi paket.
+- The Software is that installed without the user noticing.
+- It can be deinstalled through the same way.
+
+### Prerequisites
+
+1. The installationdata needs to be avaiavle for the Computer/Users through a network share.
+2. The Software needs to be avaiable as an .msi Paket
+3. An OU must be exsistend which is bound to the GPO.
+
+
+If a Software is deployed through an userconfiguration, there are 2 options through which an user can make use of the Software:
+
+1. Assigned
+This means that the Software is installed without any interaction of the user
+2. Released
+The user needs to decide if he wants to install the software
