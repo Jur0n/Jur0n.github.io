@@ -119,3 +119,44 @@ If a Software is deployed through an userconfiguration, there are 2 options thro
 This means that the Software is installed without any interaction of the user
 2. **Released**
 The user needs to decide if he wants to install the software.
+
+### Deplyoing software for certain users
+
+Sometimes a software is deployed for users that are not in same same OU. How do we achieve that only the users, which shall use the software, are actually getting it?
+This is achieved by using the so-called **filtering of the GPOs** and enables to apply GPOs only to Members of a certain group.
+In the Group policies settings is a option called "securityfilter". Groups, to which the GP applies, can be determined there.
+
+### Deploying software for all users in a OU but only if determined circumstances met
+
+This is called a **WMI-determination**.
+
+What if a Software shall be deployed to a user but the computers does not meet the requierements?
+P.E. not enough storage.
+
+WMI = Windows Management Instrumation
+These Special kind of filters useres SQL-commands to specify certain requirements.
+
+```SQL
+select * from Win32_OperatingSystem where Version like "10.%" and ProductType="1"
+```
+This statement aks for the OS version of Windows. The Filter will only allow pcs that have Win-10.x installed.
+
+### Using administrative templates
+
+Administartive templates can be imported in the default domain policy.
+
+### Providing drives
+
+Shared network drives can be provided using GPOS.
+
+### Providing Data and Folders
+
+Data can be copied through GPOs.
+
+### Local users and groups
+
+Local Groups can be managed through GPOs.
+
+
+
+
