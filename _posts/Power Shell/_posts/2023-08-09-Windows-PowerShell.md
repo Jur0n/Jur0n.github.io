@@ -43,7 +43,7 @@ The operator `|` is called a pipeline. Whith th euse of it, commands can be comb
 sort: with the use of `sort-object` the output can be sorted.
 P.E.: `Get-Command | Sort-Object -Property Source` sorts the commands by its source. Parameters are `-descending` or `-ascending`.
 
-### Date and Time
+## Date and Time
 
 There are several options do display time with Powershell wit the use of ``get-Date`` :
 
@@ -93,7 +93,7 @@ It is possible to get the time from a different computer, but not with the use o
 Get-CimInstance Win32_Currenttime -computername Win2019-2
 ```
 
-### Drive-, Folder- and Datamanagement
+## Drive-, Folder- and Datamanagement
 
 #### Get-Drive
 
@@ -159,6 +159,133 @@ Value[0]: This is a new File.
 Value[1]:
 PS C:\Powershell> Get-Content newtest.txt
 This is a new File.
-PS C:\Powershell>
+```
+
+#### ``Add-Content``
+
+With ``Add-Content`` new data can be added to a file.
+
+```PS
+# This adds new text
+add-content newtest.txt -value "NewText"
+
+# A file can be added to another
+add-content newtest.txt -value (get-content test.txt)
+```
+
+#### ``Clear-Content``
+
+Clears a File.
+
+#### Searching Files
+
+```PS
+#a file can be searched with this command:
+Get-ChildItem -Path test.txt | Select-String "dazu"
+
+#Output:
+
+PS C:\Powershell> Get-ChildItem -Path test.txt | Select-String "dazu"
+
+test.txt:2:Und hier die zweite Zeile dazu.
 
 ```
+#### Replacing Content
+
+```PS
+# replace , with ;
+(Get-Content test.txt) -replace " ",";"
+
+#Output:
+PS C:\powershell> (Get-Content test.txt) -replace " ",";"
+Dies;ist;eien;Testdate.
+Und;hier;die;zweite;Zeile;dazu.
+Danach;die;dritte.
+Gefolgt;von;der;vierten.
+Die;Fünfte;ist;die;Letzte.Nummer;6.
+PS C:\powershell>
+```
+
+The Output happens only in the Terminal screen. It is nothing changed in the file.
+
+#### ``Get-Item``
+
+Every Data and Folder has several attributes as name, length..
+
+```PS
+PS C:\powershell> get-item test.txt
+
+
+    Verzeichnis: C:\powershell
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       26.09.2023     16:28            141 test.txt
+
+
+PS C:\powershell>
+```
+Some Values are read with ``Get-ItemProperty test.txt -name length``
+
+```PS
+PS C:\powershell> Get-ItemProperty test.txt -name length
+
+
+length       : 141
+PSPath       : Microsoft.PowerShell.Core\FileSystem::C:\powershell\test.txt
+PSParentPath : Microsoft.PowerShell.Core\FileSystem::C:\powershell
+PSChildName  : test.txt
+PSDrive      : C
+PSProvider   : Microsoft.PowerShell.Core\FileSystem
+```
+### Attributes
+
+| Parameter|definition |
+|---|---|
+|d-----|Directory|
+|-a----|Archive (p.e. File)|
+|--r---|ReadOnly|
+|---h--|Hidden|
+|----s-|Systemfile|
+|-----l|Link|
+
+All letters have a destined place. Combinations are possible.
+
+#### ``Get-ItemProperty``
+
+```PS
+PS C:\powershell> Get-ItemProperty test.txt -name mode
+
+
+mode         : -ar---
+PSPath       : Microsoft.PowerShell.Core\FileSystem::C:\powershell\test.txt
+PSParentPath : Microsoft.PowerShell.Core\FileSystem::C:\powershell
+PSChildName  : test.txt
+PSDrive      : C
+PSProvider   : Microsoft.PowerShell.Core\FileSystem
+```
+
+The File show the attributes _ar_. It´s a File which is in ReadOnly.
+
+#### ``Set-ItemProperty``
+
+Attributes can be changed with the use of ``Set-ItemProperty``
+
+```PS
+Set-ItemProperty test.txt -name attributes -value ([System.IO.FileAttributes]::Hidden -bxor [System.IO.FileAttributes]::Archive)
+```
+Changes the Attributs to _hidden_ and _archive_.
+
+In this example, the attributs are set as absolute, which means that already existing attributes are overwritten.
+
+#### Making a lot of files
+
+```PS
+1..500 | ForEach-Object {New-Item -ItemType File -Path ("Datei{0:000}.txt" -f $_)} 
+```
+
+This command creates 500 empty textfiles with a schema.
+
+## Editing CSV- and logfiles
+
