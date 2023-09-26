@@ -95,16 +95,70 @@ Get-CimInstance Win32_Currenttime -computername Win2019-2
 
 ### Drive-, Folder- and Datamanagement
 
+#### Get-Drive
+
 With the use of ``Get-Disk`` and ``Get-PsDrive`` you can get information about from the drives.
+
+#### New-Item
 
 `` New-Item`` creates new Data or Structure, with ``-type file or directory`` it can be further defined. `` ni`` is an alias for `` New-Item``.
 
+#### Copy-Item
+
 with ``Copy-Item`` data can be copied.
+
+#### Move-Item
 
 With ``Move-Item`` data can be moved.
 
+#### Remove-Item
+
 With ``Remove-Item`` data can be removed.
+
+#### Get-Location / Test-Location
 
 With ``Get-Location`` the current file-path is shown.
 
 With ``Test-Location`` the given file-path is tested.
+
+#### Measure-Object
+
+`` dir | Measure-Object -property length sum`` 
+
+With the use of the Commands the size and quantity can be read.
+The number of all Files in a Subfolder can be found out with:
+
+`` (Get-ChildItem -path $Env:Systemroot -Recourse).Count``
+
+### Editing Textfiles
+
+#### ``Get-Content``
+
+Textfiles are read with ``Get-Content``
+
+`` -path`` defines the path to the file. 
+
+If only a certain line is to be read, arrays can be used:
+
+``` PS
+(Get-Content test.txt)[-2][0]
+```
+2-dimensional arrays are used. The First dimension defines the rows, the second the columns.
+The can be counted positive or negative: 1 is the first, -1 the last column.
+
+#### ``Set-Content``
+
+A new file can be created with the use of ``Set-Content``.
+
+``` PS
+PS C:\Powershell> set-Content newtest.txt
+
+Cmdlet Set-Content an der Befehlspipelineposition 1
+Geben Sie Werte für die folgenden Parameter an:
+Value[0]: This is a new File.
+Value[1]:
+PS C:\Powershell> Get-Content newtest.txt
+This is a new File.
+PS C:\Powershell>
+
+```
