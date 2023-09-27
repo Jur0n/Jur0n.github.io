@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introducing Windows PowerShell
-tags: [SERV11F, PowerShell, ISE, ps1]
+tags: [SERV11F, PowerShell, ISE, powershell]
 category: [PowerShell]
 ---
 
@@ -47,7 +47,7 @@ P.E.: `Get-Command | Sort-Object -Property Source` sorts the commands by its sou
 
 There are several options do display time with Powershell wit the use of ``get-Date`` :
 
-``` Powershell
+```powershell
 get-Date -format d
 25.09.2023
 
@@ -63,7 +63,7 @@ get-Date -format HH:mm:ss:ff
 
 #### The f-Operator
 
-``` PS1
+```powershell
 "Es ist {0:dddd}, der {0:d},{0:t}" -f (Get-Date)
 Es ist Montag, der 25.09.2023,10:27
 ```
@@ -72,7 +72,7 @@ With the use of the f-operator a String is read to the following command.
 
 with the use of ``-`` two times can be subtracted.
 
-``` PS 1
+```powershell
 PS C:\Users\Administrator> (get-date)-(get-date "1/1/2019 0:0:0")
 Days              : 1728
 Hours             : 10
@@ -89,7 +89,7 @@ TotalMilliseconds : 149337996213,551
 
 It is possible to get the time from a different computer, but not with the use of ``Get-Date``. Therefore ``Win32_Currenttime`` has to be used.
 
-``` PS1
+```powershell
 Get-CimInstance Win32_Currenttime -computername Win2019-2
 ```
 
@@ -140,7 +140,7 @@ Textfiles are read with ``Get-Content``
 
 If only a certain line is to be read, arrays can be used:
 
-``` PS1
+```powershell
 (Get-Content test.txt)[-2][0]
 ```
 2-dimensional arrays are used. The First dimension defines the rows, the second the columns.
@@ -150,7 +150,7 @@ The can be counted positive or negative: 1 is the first, -1 the last column.
 
 A new file can be created with the use of ``Set-Content``.
 
-``` PS1
+```powershell
 PS C:\Powershell> set-Content newtest.txt
 
 Cmdlet Set-Content an der Befehlspipelineposition 1
@@ -165,7 +165,7 @@ This is a new File.
 
 With ``Add-Content`` new data can be added to a file.
 
-```PS1
+```powershell
 # This adds new text
 add-content newtest.txt -value "NewText"
 
@@ -179,7 +179,7 @@ Clears a File.
 
 #### Searching Files
 
-```PS1
+```powershell
 #a file can be searched with this command:
 Get-ChildItem -Path test.txt | Select-String "dazu"
 
@@ -192,7 +192,7 @@ test.txt:2:Und hier die zweite Zeile dazu.
 ```
 #### Replacing Content
 
-```PS1
+```powershell
 # replace , with ;
 (Get-Content test.txt) -replace " ",";"
 
@@ -212,7 +212,7 @@ The Output happens only in the Terminal screen. It is nothing changed in the fil
 
 Every Data and Folder has several attributes as name, length..
 
-```PS1
+```powershell
 PS C:\powershell> get-item test.txt
 
 
@@ -228,7 +228,7 @@ PS C:\powershell>
 ```
 Some Values are read with ``Get-ItemProperty test.txt -name length``
 
-```PS1
+```powershell
 PS C:\powershell> Get-ItemProperty test.txt -name length
 
 
@@ -254,7 +254,7 @@ All letters have a destined place. Combinations are possible.
 
 #### ``Get-ItemProperty``
 
-```PS1
+```powershell
 PS C:\powershell> Get-ItemProperty test.txt -name mode
 
 
@@ -272,7 +272,7 @@ The File show the attributes _ar_. It´s a File which is in ReadOnly.
 
 Attributes can be changed with the use of ``Set-ItemProperty``
 
-```PS1
+```powershell
 Set-ItemProperty test.txt -name attributes -value ([System.IO.FileAttributes]::Hidden -bxor [System.IO.FileAttributes]::Archive)
 ```
 Changes the Attributs to _hidden_ and _archive_.
@@ -281,7 +281,7 @@ In this example, the attributs are set as absolute, which means that already exi
 
 #### Making a lot of files
 
-```PS1
+```powershell
 1..500 | ForEach-Object {New-Item -ItemType File -Path ("Datei{0:000}.txt" -f $_)} 
 ```
 
@@ -295,7 +295,7 @@ A typical example is the **dcpromo.csv**. I contains information about the creat
 
 ### ``Import-csv``
 
-``` PS1
+```powershell
 # The command import-csv import data to the console
 PS C:\Powershell> Import-csv -path daten.csv
 
@@ -316,7 +316,7 @@ PS C:\Powershell>
 
 Data can be sorted:
 
-```PS1
+```powershell
 #
 # Import-CSV -Path daten.csv | Sort-Object -Property { Get-Date $_.Datum }
 #
@@ -339,7 +339,7 @@ Filtering Data by Email - Show all entry where Email is not empty (``$_.Email -n
 
 - -ne = not equal
 
-``` PS1
+```powershell
 PS C:\Powershell> Import-CSV -Path daten.csv | Where-Object { $_.Email -ne "" } | Sort-Object -Property { Get-Date $_.Datum }
 
 Name   Datum      Email          IP-Adresse
@@ -379,7 +379,7 @@ They differs from 5 categories:
 
 It Is handy to define create a Match-variable for searching.
 
-``` ps1
+```powershell
 # Match-variable:
 $DatumMuster = "\W[0-9]{2}\.[0-9]{2}\.[0-9]{4}\W" 
 
@@ -444,7 +444,7 @@ an if-conditions proves whether a condition is true or false.
 
 ### if-else
 
-```ps1
+```powershell
 $tp "C:\Powershell"
 if (Test-Path $testpfad)
     # if this condition is true
@@ -458,7 +458,7 @@ else
 
 It is possible to make an if condition with multiple alternatives:
 
-```ps1
+```powershell
 if ($condition = true)
     {instruction 1}
 else if ($condition2 = true)
@@ -473,7 +473,7 @@ Using a switch instruction, multiple conditions are displayed. a switch is recom
 
 #### example 1
 
-```ps1
+```powershell
 $n = read-host "school note = ?"
 switch ($n) {
     "A" {
@@ -501,7 +501,7 @@ switch ($n) {
 ```
 #### example 2
 
-```ps1
+```powershell
 switch ((Get-Date).Hour) {
     {$_ -ge 6 -and $_ -lt 12}} {$text = "Good Morning!"}
     {...}
@@ -530,7 +530,7 @@ Commands are in dependency to a certain condition executed several times.
 
  #### while-loop
 
- ```ps1
+ ```powershell
  $number = read-host "Enter Number:"
 
 # The while-loop is repeated as long as the entered number is less or equal than 5.
@@ -549,7 +549,7 @@ write-host "The number is greater thatn 5.."
 
  If the condition is met, the loop while be executed again.
 
- ```ps1
+ ```powershell
  $n = 1
  do {
     "Loop nr. $n"
@@ -562,7 +562,7 @@ write-host "The number is greater thatn 5.."
 
  If the condition is met, the loop ends.
 
-  ```ps1
+  ```powershell
  $n = 1
  do {
     "Loop nr. $n"
@@ -577,7 +577,7 @@ write-host "The number is greater thatn 5.."
 
  In a for loop the amount of repetitions is defined in the start.
 
- ```ps1
+ ```powershell
  for ($n=1; $n -le 6; $n++) {
     "loop nr. $n"
  }
@@ -591,7 +591,7 @@ Example 1:
 
 For each city in the citylist, the city is written to the output.
 
-```ps1
+```powershell
 $citylist = "Pisa", "Venedig", "Florenz"
 foreach ($city in $citylist) {
     write-host $city
