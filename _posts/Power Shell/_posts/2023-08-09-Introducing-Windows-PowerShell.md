@@ -575,7 +575,7 @@ write-host "The number is greater thatn 5.."
 
  #### for-loop
 
- In a foor loop the amount of repetitions is defined in the start.
+ In a for loop the amount of repetitions is defined in the start.
 
  ```ps1
  for ($n=1; $n -le 6; $n++) {
@@ -583,4 +583,30 @@ write-host "The number is greater thatn 5.."
  }
  ```
 
- 
+#### foreach-loop
+
+In a foreach loop the amount of repetitions is defined in a array.
+
+Example 1:
+
+For each city in the citylist, the city is written to the output.
+
+```ps1
+$citylist = "Pisa", "Venedig", "Florenz"
+foreach ($city in $citylist) {
+    write-host $city
+}
+```
+
+Example 2:
+
+All numbers from 1 to 50 are added to each other.
+
+```PowerShell
+$sum=[int]0;
+foreach ($n in @(1..50)) {
+    $sum += $n
+}
+write-host $sum
+```
+
