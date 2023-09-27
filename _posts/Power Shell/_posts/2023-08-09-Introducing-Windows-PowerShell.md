@@ -609,4 +609,42 @@ foreach ($n in @(1..50)) {
 }
 write-host $sum
 ```
+Its noteable how the array is written. only the first and last number are declared and seperated by two dots. Such a area is defined with an **@**-sign. 
 
+### Break-Command
+
+Loops continue running until the condition is no longer met. It is possible to break the loop before that happens.
+the ``break`` operator stops a running loop.
+
+```powershell
+$sum=[int]0;
+foreach ($n in @(1..50)) {
+    $sum +=$n
+    if ($sum -gt 100) { break }
+}
+ write-host $sum 
+```
+
+This loop stops when the ``$sum`` reaches 100.
+
+### Continue-command
+
+With the ``continue`` command a loop is exited and started at the beginning.
+
+```powershell
+$n = 0
+while ($n -lt 10) {
+    $n++
+    if ($n -eq 6) {continue}
+    Write-Host $n
+}
+```
+
+This means that in this example, all nubers are written to the output except of number 6.
+
+## Debugging
+
+**Debugging** is the step-by-step execution of a programme. For this purpose, you can have the programme stop at a certain point or execute each step individually.
+This is usefull for testing scripts, p.e. if a loop is exited to the wrong condition.
+
+---
