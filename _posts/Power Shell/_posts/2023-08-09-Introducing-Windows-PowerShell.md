@@ -289,3 +289,47 @@ This command creates 500 empty textfiles with a schema.
 
 ## Editing CSV- and logfiles
 
+In Windows operating systems protocols are saved as logfiles. Those files are stored as text or as CSV-Files.
+Those are system independet and include readable data seperated by commas. Every CSV file starts with headings.
+A typical example is the **dcpromo.csv**. I contains information about the creation of a domain.
+
+### ``Import-csv``
+
+``` PS
+# The command import-csv import data to the console
+PS C:\Powershell> Import-csv -path daten.csv
+
+Name   Datum      Email          IP-Adresse
+----   -----      -----          ----------
+Egon   3.1.1999   egon@mail.de   172.120.0.4
+Uta    3.1.1999   uta@mail.de    168.130.1.1
+Bernd  01.03.2019                156.120.0.3
+Paul   04.08.2011 paul@mail.de   10.7.10.1
+Marion 06.07.2001 marion@mail.de 172.140.0.1
+Otto   04.12.2018 otto@mail.de   198.168.4,200
+Anke   31.12.1980                200.100.6.2
+
+
+PS C:\Powershell>
+```
+#### Sorting Data
+
+Data can be sorted:
+
+```PS
+#
+# Import-CSV -Path daten.csv | Sort-Object -Property { Get-Date $_.Datum }
+#
+PS C:\Powershell> Import-CSV -Path daten.csv | Sort-Object -Property { Get-Date $_.Datum }
+
+Name   Datum      Email          IP-Adresse
+----   -----      -----          ----------
+Anke   31.12.1980                200.100.6.2
+Egon   3.1.1999   egon@mail.de   172.120.0.4
+Uta    3.1.1999   uta@mail.de    168.130.1.1
+Marion 06.07.2001 marion@mail.de 172.140.0.1
+Paul   04.08.2011 paul@mail.de   10.7.10.1
+Otto   04.12.2018 otto@mail.de   198.168.4,200
+Bernd  01.03.2019                156.120.0.3
+```
+
