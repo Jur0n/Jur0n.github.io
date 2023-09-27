@@ -525,13 +525,13 @@ Write-Host "$text - The time is $(get-date -format HH:mm)"
 ### Repetitions - loops
 
 Commands are in dependency to a certain condition executed several times.
- A simple loop repeats a command until the the condition is no longer met.
- It might be that a while loop is never executed if the condition is not met.
+A simple loop repeats a command until the the condition is no longer met.
+It might be that a while loop is never executed if the condition is not met.
 
- #### while-loop
+#### while-loop
 
- ```powershell
- $number = read-host "Enter Number:"
+```powershell
+$number = read-host "Enter Number:"
 
 # The while-loop is repeated as long as the entered number is less or equal than 5.
 while ($number -le 5) {
@@ -540,48 +540,48 @@ while ($number -le 5) {
 }
 # If a number greater than 5 is entered, the while loop ends.
 write-host "The number is greater thatn 5.."
- ```
- #### do-loop
+```
+#### do-loop
 
- A **do-loop** is at least executed 1 time. At the end of the loop-block a **while** or **until**checks a condition.
+A **do-loop** is at least executed 1 time. At the end of the loop-block a **while** or **until**checks a condition.
 
- ##### do-while
+##### do-while
 
- If the condition is met, the loop while be executed again.
+If the condition is met, the loop while be executed again.
 
- ```powershell
- $n = 1
- do {
-    "Loop nr. $n"
-    $n++
- }
- while ($n -lt 7)
- ```
+```powershell
+$n = 1
+do {
+   "Loop nr. $n"
+   $n++
+}
+while ($n -lt 7)
+```
 
- ##### do-until
+##### do-until
 
- If the condition is met, the loop ends.
-
-  ```powershell
- $n = 1
- do {
-    "Loop nr. $n"
-    $n++
- }
- while ($n -ge 7)
- ```
-
- The two loops do the same, only the condition differs.
-
- #### for-loop
-
- In a for loop the amount of repetitions is defined in the start.
+If the condition is met, the loop ends.
 
  ```powershell
- for ($n=1; $n -le 6; $n++) {
-    "loop nr. $n"
- }
- ```
+$n = 1
+do {
+   "Loop nr. $n"
+   $n++
+}
+while ($n -ge 7)
+```
+
+The two loops do the same, only the condition differs.
+
+#### for-loop
+
+In a for loop the amount of repetitions is defined in the start.
+
+```powershell
+for ($n=1; $n -le 6; $n++) {
+   "loop nr. $n"
+}
+```
 
 #### foreach-loop
 
