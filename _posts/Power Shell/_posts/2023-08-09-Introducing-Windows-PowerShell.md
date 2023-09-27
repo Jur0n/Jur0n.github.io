@@ -602,7 +602,7 @@ Example 2:
 
 All numbers from 1 to 50 are added to each other.
 
-```PowerShell
+```powershell
 $sum=[int]0;
 foreach ($n in @(1..50)) {
     $sum += $n
