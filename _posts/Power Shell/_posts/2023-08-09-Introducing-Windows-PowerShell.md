@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Windows PowerShell
+title: Introducing Windows PowerShell
 tags: [SERV11F, PowerShell, ISE, ps1]
 category: [PowerShell]
 ---
@@ -403,4 +403,35 @@ This can be changed:
 ```PS
 $DatumMuster = "\W[0-9]{1,2}\.[0-9]{1,2}\.[1-9]{4}\W" 
 ```
+
+## Introduction to Powershell Scripts
+
+In Scripts, multiple commands can be stored and executed in a given order.
+Windows provides the PowerShell ISE, and development environment for powershell scripts.
+
+### Datatypes and variables
+
+The following Datatypes are avaible in PowerShell:
+
+|Datatype|Meaning|
+|---|---|
+|int|integer|
+|int32|integer (32 Bit)|
+|int64+|integer (64 Bit)|
+|single|Number with decimal points|
+|byte|Byte (8 Bit)|
+|char|Character|
+|DateTime|Date and Time|
+|string| String of characters|
+
+Powershell can automatically decide which datatype to use.
+
+```PS
+$value = 123 #will be stored as int
+$value = "This is a String" #will be stored string
+
+[int]$sum = 100 + 200 #forcably storing as int
+```
+
+next: Demo Scripts and loops
 
