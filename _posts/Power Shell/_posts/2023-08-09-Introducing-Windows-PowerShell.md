@@ -63,7 +63,7 @@ get-Date -format HH:mm:ss:ff
 
 #### The f-Operator
 
-``` PS
+``` PS1
 "Es ist {0:dddd}, der {0:d},{0:t}" -f (Get-Date)
 Es ist Montag, der 25.09.2023,10:27
 ```
@@ -72,7 +72,7 @@ With the use of the f-operator a String is read to the following command.
 
 with the use of ``-`` two times can be subtracted.
 
-``` PS 
+``` PS 1
 PS C:\Users\Administrator> (get-date)-(get-date "1/1/2019 0:0:0")
 Days              : 1728
 Hours             : 10
@@ -89,7 +89,7 @@ TotalMilliseconds : 149337996213,551
 
 It is possible to get the time from a different computer, but not with the use of ``Get-Date``. Therefore ``Win32_Currenttime`` has to be used.
 
-``` PS
+``` PS1
 Get-CimInstance Win32_Currenttime -computername Win2019-2
 ```
 
@@ -140,7 +140,7 @@ Textfiles are read with ``Get-Content``
 
 If only a certain line is to be read, arrays can be used:
 
-``` PS
+``` PS1
 (Get-Content test.txt)[-2][0]
 ```
 2-dimensional arrays are used. The First dimension defines the rows, the second the columns.
@@ -150,7 +150,7 @@ The can be counted positive or negative: 1 is the first, -1 the last column.
 
 A new file can be created with the use of ``Set-Content``.
 
-``` PS
+``` PS1
 PS C:\Powershell> set-Content newtest.txt
 
 Cmdlet Set-Content an der Befehlspipelineposition 1
@@ -165,7 +165,7 @@ This is a new File.
 
 With ``Add-Content`` new data can be added to a file.
 
-```PS
+```PS1
 # This adds new text
 add-content newtest.txt -value "NewText"
 
@@ -179,7 +179,7 @@ Clears a File.
 
 #### Searching Files
 
-```PS
+```PS1
 #a file can be searched with this command:
 Get-ChildItem -Path test.txt | Select-String "dazu"
 
@@ -192,7 +192,7 @@ test.txt:2:Und hier die zweite Zeile dazu.
 ```
 #### Replacing Content
 
-```PS
+```PS1
 # replace , with ;
 (Get-Content test.txt) -replace " ",";"
 
@@ -212,7 +212,7 @@ The Output happens only in the Terminal screen. It is nothing changed in the fil
 
 Every Data and Folder has several attributes as name, length..
 
-```PS
+```PS1
 PS C:\powershell> get-item test.txt
 
 
@@ -228,7 +228,7 @@ PS C:\powershell>
 ```
 Some Values are read with ``Get-ItemProperty test.txt -name length``
 
-```PS
+```PS1
 PS C:\powershell> Get-ItemProperty test.txt -name length
 
 
@@ -254,7 +254,7 @@ All letters have a destined place. Combinations are possible.
 
 #### ``Get-ItemProperty``
 
-```PS
+```PS1
 PS C:\powershell> Get-ItemProperty test.txt -name mode
 
 
@@ -272,7 +272,7 @@ The File show the attributes _ar_. It´s a File which is in ReadOnly.
 
 Attributes can be changed with the use of ``Set-ItemProperty``
 
-```PS
+```PS1
 Set-ItemProperty test.txt -name attributes -value ([System.IO.FileAttributes]::Hidden -bxor [System.IO.FileAttributes]::Archive)
 ```
 Changes the Attributs to _hidden_ and _archive_.
@@ -281,7 +281,7 @@ In this example, the attributs are set as absolute, which means that already exi
 
 #### Making a lot of files
 
-```PS
+```PS1
 1..500 | ForEach-Object {New-Item -ItemType File -Path ("Datei{0:000}.txt" -f $_)} 
 ```
 
@@ -295,7 +295,7 @@ A typical example is the **dcpromo.csv**. I contains information about the creat
 
 ### ``Import-csv``
 
-``` PS
+``` PS1
 # The command import-csv import data to the console
 PS C:\Powershell> Import-csv -path daten.csv
 
@@ -316,7 +316,7 @@ PS C:\Powershell>
 
 Data can be sorted:
 
-```PS
+```PS1
 #
 # Import-CSV -Path daten.csv | Sort-Object -Property { Get-Date $_.Datum }
 #
@@ -339,7 +339,7 @@ Filtering Data by Email - Show all entry where Email is not empty (``$_.Email -n
 
 - -ne = not equal
 
-``` PS
+``` PS1
 PS C:\Powershell> Import-CSV -Path daten.csv | Where-Object { $_.Email -ne "" } | Sort-Object -Property { Get-Date $_.Datum }
 
 Name   Datum      Email          IP-Adresse
@@ -379,7 +379,7 @@ They differs from 5 categories:
 
 It Is handy to define create a Match-variable for searching.
 
-```PS
+``` ps1
 # Match-variable:
 $DatumMuster = "\W[0-9]{2}\.[0-9]{2}\.[0-9]{4}\W" 
 
@@ -433,5 +433,154 @@ $value = "This is a String" #will be stored string
 [int]$sum = 100 + 200 #forcably storing as int
 ```
 
-next: Demo Scripts and loops
+### Sequence
 
+The easiest structure of a script is a **sequence**. Single commands are executed one after another.
+
+### Branching
+
+The simplest formof branching are ``if-conditions``.
+an if-conditions proves whether a condition is true or false.
+
+### if-else
+
+```ps1
+$tp "C:\Powershell"
+if (Test-Path $testpfad)
+    # if this condition is true
+    {Write-Host "The directory $tp exists"}
+else
+    #if the condition is not true, else is executed
+    {Write-Host "The directory $tp does not exist"}
+```
+
+### if-else with multiple else-if
+
+It is possible to make an if condition with multiple alternatives:
+
+```ps1
+if ($condition = true)
+    {instruction 1}
+else if ($condition2 = true)
+    {intruction 2}
+else
+    {instruction 3}
+```
+
+### switch instructions
+
+Using a switch instruction, multiple conditions are displayed. a switch is recommended if more than 3 conditions are possible.
+
+#### example 1
+
+```ps1
+$n = read-host "school note = ?"
+switch ($n) {
+    "A" {
+        $comment = "excellent work!"
+    }
+    "B" {
+        $comment = "good work!"
+    }
+    "C" {
+        $comment = "___ work!"
+    }
+    "D" {
+        $comment = "just enough."
+    }
+    "E" {
+        $comment = "deficiency work!"
+    }
+    "F" {
+        $comment = "not enough."
+    }
+    default {
+        $comment ="no input"
+    }
+} 
+```
+#### example 2
+
+```ps1
+switch ((Get-Date).Hour) {
+    {$_ -ge 6 -and $_ -lt 12}} {$text = "Good Morning!"}
+    {...}
+}
+Write-Host "$text - The time is $(get-date -format HH:mm)"
+```
+
+---
+
+### Conditions
+
+|expression|example|meaning|short|
+|---|---|---|---|
+|z1 -gt z2|[6 -gt 5]| returns true if z1 > z2|greater than|
+|z1 -lt z2|[5 -gt 6]| returns true if z1 < z2|less than|
+|z1 -ne z2|[5 -gt 6]| returns true if z1 =/= z2|not equal|
+|z1 -le z2|[5 -gt 5]| returns true if z1 <= z2|less or equal|
+|z1 -ge z2|[5 -gt 5]| returns true if z1 >= z2|greater or equal|
+|z1 -eq z2|[5 -gt 5]| returns true if z1 == z2|equal|
+
+### Repetitions - loops
+
+Commands are in dependency to a certain condition executed several times.
+ A simple loop repeats a command until the the condition is no longer met.
+ It might be that a while loop is never executed if the condition is not met.
+
+ #### while-loop
+
+ ```ps1
+ $number = read-host "Enter Number:"
+
+# The while-loop is repeated as long as the entered number is less or equal than 5.
+while ($number -le 5) {
+    write-host $number
+    $number = read-host "Enter Number:"
+}
+# If a number greater than 5 is entered, the while loop ends.
+write-host "The number is greater thatn 5.."
+ ```
+ #### do-loop
+
+ A **do-loop** is at least executed 1 time. At the end of the loop-block a **while** or **until**checks a condition.
+
+ ##### do-while
+
+ If the condition is met, the loop while be executed again.
+
+ ```ps1
+ $n = 1
+ do {
+    "Loop nr. $n"
+    $n++
+ }
+ while ($n -lt 7)
+ ```
+
+ ##### do-until
+
+ If the condition is met, the loop ends.
+
+  ```ps1
+ $n = 1
+ do {
+    "Loop nr. $n"
+    $n++
+ }
+ while ($n -ge 7)
+ ```
+
+ The two loops do the same, only the condition differs.
+
+ #### for-loop
+
+ In a foor loop the amount of repetitions is defined in the start.
+
+ ```ps1
+ for ($n=1; $n -le 6; $n++) {
+    "loop nr. $n"
+ }
+ ```
+
+ 
