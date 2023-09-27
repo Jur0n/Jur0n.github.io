@@ -333,3 +333,74 @@ Otto   04.12.2018 otto@mail.de   198.168.4,200
 Bernd  01.03.2019                156.120.0.3
 ```
 
+#### Filtering Data
+
+Filtering Data by Email - Show all entry where Email is not empty (``$_.Email -ne “” ``)
+
+- -ne = not equal
+
+``` PS
+PS C:\Powershell> Import-CSV -Path daten.csv | Where-Object { $_.Email -ne "" } | Sort-Object -Property { Get-Date $_.Datum }
+
+Name   Datum      Email          IP-Adresse
+----   -----      -----          ----------
+Uta    3.1.1999   uta@mail.de    168.130.1.1
+Egon   3.1.1999   egon@mail.de   172.120.0.4
+Marion 06.07.2001 marion@mail.de 172.140.0.1
+Paul   04.08.2011 paul@mail.de   10.7.10.1
+Otto   04.12.2018 otto@mail.de   198.168.4,200
+```
+
+The same can be done with the attribute  ``-eq`` = equal:
+
+``` PS
+PS C:\Powershell> Import-CSV -Path daten.csv | Where-Object { $_.Email -eq "" } | Sort-Object -Property { Get-Date $_.Datum }
+
+Name  Datum      Email IP-Adresse
+----  -----      ----- ----------
+Anke  31.12.1980       200.100.6.2
+Bernd 01.03.2019       156.120.0.3
+```
+
+More about the [Topic](https://docs.microsoft.com/de-de/dotnet/standard/base-types/regular-expression-language-quick-reference "sample title")
+
+Searching CSVs underlies certain rules. The search is always for certain characteristics that are described in a regular expression.
+Regular expressions are character strings in which common letters, numbers as well as many special characters are used to describe patterns.
+
+They differs from 5 categories:
+
+- Character class - contains letters or numbers
+- Quantifier - defines how often the character class has to repeat
+- Anchor - defines start and end of an character class
+- round brackets - groups elements
+- Escape-Sign - **"\"**  backslash
+
+---
+
+It Is handy to define create a Match-variable for searching.
+
+```PS
+# Match-variable:
+$DatumMuster = "\W[0-9]{2}\.[0-9]{2}\.[0-9]{4}\W" 
+
+# angular brackets contain the values that are allowed - [0-9] = any numbers
+# curled brackets define the amount of values - {2} = 2 values; {4} = 4 values
+# The start and end are define throug \W
+
+PS C:\Powershell> $DatumMuster = "\W[0-9]{2}\.[0-9]{2}\.[0-9]{4}\W"
+PS C:\Powershell> (Get-Content -Path daten.csv ) | Foreach-Object {if ($_ -Match $DatumMuster) {$_ }}
+Bernd,"01.03.2019",,"156.120.0.3"
+Paul,"04.08.2011",paul@mail.de,"10.7.10.1"
+Marion,"06.07.2001",marion@mail.de,"172.140.0.1"
+Otto,"04.12.2018",otto@mail.de,"198.168.4,200"
+Anke,"31.12.1980",,"200.100.6.2"
+```
+
+this example show all data that follows "dd.mm.yyyy". The Output does not contain the dates with single letters.
+
+This can be changed:
+
+```PS
+$DatumMuster = "\W[0-9]{1,2}\.[0-9]{1,2}\.[1-9]{4}\W" 
+```
+
