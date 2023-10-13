@@ -164,7 +164,7 @@ To link an image, you can use this command:
 
 ``![This is my Block Profile Picture!](/img/logo.jpg "My Profile Picture") ``
 
-<img src="/img/logo.jpg" width="100" height="100" style="position: relative; left: 10px;">
+<img src="/img/logo.jpg" width="100" height="100" style="position: relative; left: 10px;" alt="">
 
 ## Escaping Characters
 ---
