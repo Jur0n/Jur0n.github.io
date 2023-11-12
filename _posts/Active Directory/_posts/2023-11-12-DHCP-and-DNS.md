@@ -1,7 +1,7 @@
 ---
 layout: post
-title: DHCP & DNS   
-tags: [DHCP, DNS, Active Directory, SERV13F]
+title: DNS   
+tags: [DNS, Active Directory, SERV13F]
 category: [Active Directory]
 ---
 
@@ -32,7 +32,7 @@ With the use of this, network and server load can be reduced.
 
 ### Stubzone
 
-A forward-lookup zone can also be konfigured as stubzone. A Stubzone contains partial quantities of zonedata and a copy of Resource records, which are required to indentify the authorising DNS-Server in an zone.
+A forward-lookup zone can also be configured as stubzone. A Stubzone contains partial quantities of zonedata and a copy of Resource records, which are required to indentify the authorising DNS-Server in an zone.
 A Stubzone saves a copy of a zone, which does only contain **Nameserver** (NS), **start of authority**(SOA) and **A-Entrys**. The NS-Resourcerecord allocates the DNS-domainnames to servers that are authorized or contains a zonefile for the domain.
 The SOA-Resourcerecord provides the startingpoint of information saved in a zone.
 
@@ -64,4 +64,22 @@ A DNS-Forward-Lookupzone contains different resource records:
 |SOA|The SOA record provides the startingpoint of information saved in a zone. (**Star of Authority**)|
 |SRV|the **Server** record marks a service that is executed on a host. If a host hat to authenticate at a DC, it is looking for a SRV record.|
 
+## Different types of DNS-Servers
 
+### Primary and secondary Server
+
+Primary and secondary servers are standartserver. On the primary server changes are made to the DNS-database of its zone.
+The secondary server are provided with read-onyl copies of the primary zones. This copies are distributed with zone transfers.
+
+The zonedata which is needed for nameresolving should be avaiable on multiple DNS-Servers for network- and server load balance.
+Redudandency is also an important issue.
+
+### Masterserver
+
+In a zonefile are NS- and SOA-records that define the Masterserver of a zone. The Masterserver distributes changes of the zonedatabase. It can be a primary or a secondary server.
+In normal usecases the primary DNS-Server is also the Masterserver.
+
+### Cache-only-Server
+
+Servers for caching are not authorised for any zone, which means they do not store any data about primary or secondary zones.
+They do resolved domain names for client and save the info for a given period of time. Their storage is stored mostly with domain names that are asked often for.
